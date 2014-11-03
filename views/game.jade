@@ -1,0 +1,30 @@
+extends layout
+
+block content
+	.container-fluid.headercont
+			.page-header
+				br
+				h1
+					| #{game.productname}&nbsp;
+					small #{game.consolename}
+					br
+					br
+					br
+		.padding20px
+		.container-fluid
+			.row
+				.col-med-6.col-sm-6.gameimg
+					img(src="http://placehold.it/312x445", alt="")
+					br
+					p #{game.productname} cover art
+					button Add Photo
+				.col-med-6.col-sm-6.gameinfo
+					h3 Game Information
+					h4 Genre
+					p #{game.genre}
+					h4 Current Loose Price
+					p $#{game.looseprice}
+					h4 Current CIB (Complete in Box)
+					p $#{game.cibprice}
+
+		.padding20px
