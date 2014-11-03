@@ -6,6 +6,8 @@ var browseController = require('./controllers/browse.js');
 
 mongoose.connect('mongodb://localhost/vgtrackr');
 
+require('./models/seeds/seeddb.js');
+
 var app = express();
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
