@@ -7,10 +7,11 @@ var gameSchema = new Schema({
 	looseprice: Number,
 	cibprice: Number,
 	genre: String,
+	gameid: Number,
 	releaseyear: String,
 	inCollection: Number,
 	inTradeList: Number,
 	comments: [Number]
 });
 
-var Game = mongoose.model('Game', gameSchema);
+module.exports = mongoose.model('Game', gameSchema);
