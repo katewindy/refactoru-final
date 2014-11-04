@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var indexController = require('./controllers/index.js');
 var browseController = require('./controllers/browse.js');
+var apiController = require('./controllers/apiController.js');
 
 mongoose.connect('mongodb://localhost/vgtrackr');
 
@@ -19,6 +20,7 @@ app.get('/collection', indexController.collection);
 app.get('/stats', indexController.stats);
 app.get('/wtfmachine', indexController.wtfmachine);
 app.get('/newstuff', indexController.newstuff);
+app.get('/consoles/:consolename', apiController.getGamesByConsole);
 
 var server = app.listen(4484, function() {
 	console.log('Express server listening on port ' + server.address().port);
