@@ -7,6 +7,16 @@ var apiController = {
 			res.send(results);
 		});
 	},
+	getGamesByConsole: function(req, res){
+		var console = req.params.consolename;
+
+		Game.find({consolename: console}, function(err, results){
+			res.render('byconsole', {
+				gameList: results,
+				consolename: console
+			});
+		});
+	},
 	// gets a single game from the DB
 	getGame: function(req, res){
 		var id = req.params.id;
